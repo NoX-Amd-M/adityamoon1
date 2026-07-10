@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arts / Humanities Stream Guide — Careers, Exams & Colleges | Disha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Disha — shared stream-page styles ===== */
+:root{
+  --bg:#FFFFFF;
+  --bg-soft:#F1F5FB;
+  --panel:#FFFFFF;
+  --panel-line:#DCE6F2;
+  --ink:#142A4C;
+  --ink-dim:#5C6B82;
+  --gold:#2563EB;
+  --gold-bright:#3B82F6;
+  --emerald:#0E8F6F;
+  --garnet:#C0392B;
+  --navy-deep:#163E7C;
+  --shadow: 0 24px 50px -20px rgba(28,55,98,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display{
+  font-family:'Fraunces',serif;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.mono{font-family:'JetBrains Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:2px;
+}
+
+/* HEADER */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--panel-line);
+}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px;}
+.logo{font-family:'Fraunces',serif; font-weight:700; font-size:1.5rem; color:var(--ink); display:flex; align-items:center; gap:8px;}
+.logo .dot{color:var(--gold);}
+.navlinks{display:flex; gap:28px; font-weight:600; font-size:0.92rem; color:var(--ink-dim); flex-wrap:wrap;}
+.navlinks a:hover{color:var(--gold-bright);}
+.nav-cta{background:var(--gold); color:var(--navy-deep); padding:10px 20px; border-radius:3px; font-weight:700; font-size:0.88rem; border:1px solid var(--gold); white-space:nowrap;}
+.nav-cta:hover{background:var(--gold-bright); border-color:var(--gold-bright);}
+
+.breadcrumb{font-size:0.8rem; color:var(--ink-dim); padding:18px 0 0;}
+.breadcrumb a:hover{color:var(--gold-bright);}
+
+/* HERO */
+.stream-hero{padding:50px 0 70px; position:relative; background:radial-gradient(circle at 85% 0%, rgba(37,99,235,0.07), transparent 55%);}
+.eyebrow{font-family:'JetBrains Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-bright); font-weight:700; display:inline-flex; align-items:center; gap:10px; margin-bottom:18px;}
+.eyebrow::before{content:''; width:30px; height:2px; background:var(--gold-bright);}
+.stream-hero h1{font-size:clamp(2.2rem,4.6vw,3.4rem); font-weight:700; line-height:1.08; max-width:780px;}
+.stream-hero .lead{margin-top:18px; font-size:1.12rem; color:var(--ink-dim); max-width:680px;}
+
+.stat-bar{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--panel-line); border:1px solid var(--panel-line); border-radius:6px; margin-top:36px; overflow:hidden;}
+.stat-cell{background:var(--panel); padding:20px 22px;}
+.stat-cell .mono{font-size:0.68rem; color:var(--gold-bright); text-transform:uppercase; letter-spacing:0.07em;}
+.stat-cell .val{font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;}
+
+/* SECTIONS */
+.section{padding:70px 0;}
+.section-bordered{border-top:1px solid var(--panel-line);}
+.section-head{max-width:720px; margin-bottom:40px;}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.2rem); font-weight:700;}
+.section-head p{margin-top:12px; font-size:1.02rem; color:var(--ink-dim);}
+
+/* two-col pros/cons */
+.fit-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+.fit-card{background:var(--panel); border:1px solid var(--panel-line); border-radius:6px; padding:26px;}
+.fit-card.good{border-top:3px solid var(--emerald);}
+.fit-card.bad{border-top:3px solid var(--garnet);}
+.fit-card h3{font-size:1.15rem; margin-bottom:14px;}
+.fit-card ul{list-style:none;}
+.fit-card li{padding:8px 0; border-top:1px dashed var(--panel-line); font-size:0.94rem; color:var(--ink-dim); display:flex; gap:10px;}
+.fit-card li:first-child{border-top:none;}
+.fit-card.good li::before{content:'✓'; color:var(--emerald); font-weight:700;}
+.fit-card.bad li::before{content:'✕'; color:var(--garnet); font-weight:700;}
+
+/* subject chips */
+.chip-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+.chip{background:var(--bg-soft); border:1px solid var(--panel-line); padding:8px 16px; border-radius:20px; font-size:0.86rem; color:var(--ink-dim);}
+
+/* tables */
+.dtable{width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--panel-line); font-size:0.9rem;}
+.dtable th, .dtable td{border:1px solid var(--panel-line); padding:14px 16px; text-align:left; vertical-align:top; color:var(--ink-dim);}
+.dtable thead th{background:var(--navy-deep); color:var(--gold-bright); font-family:'JetBrains Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em;}
+.dtable td.key{font-family:'JetBrains Mono',monospace; color:var(--ink); font-weight:700; white-space:nowrap;}
+.dtable tbody tr:nth-child(even){background:rgba(37,99,235,0.04);}
+.table-scroll{overflow-x:auto;}
+
+/* timeline */
+.timeline{display:grid; gap:0; border-left:2px solid var(--panel-line); margin-left:8px;}
+.tl-item{position:relative; padding:0 0 32px 30px;}
+.tl-item::before{content:''; position:absolute; left:-7px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--gold); border:2px solid var(--bg);}
+.tl-item .mono{font-size:0.72rem; color:var(--gold-bright);}
+.tl-item h4{margin-top:4px; font-size:1.05rem;}
+.tl-item p{margin-top:6px; font-size:0.9rem; color:var(--ink-dim); max-width:560px;}
+
+/* exam / college cards */
+.card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.info-card{background:var(--panel); border:1px solid var(--panel-line); border-radius:6px; padding:24px; border-left:3px solid var(--gold);}
+.info-card .mono{font-size:0.68rem; color:var(--gold-bright); text-transform:uppercase; letter-spacing:0.06em;}
+.info-card h4{font-size:1.1rem; margin-top:8px;}
+.info-card p{font-size:0.88rem; margin-top:8px; color:var(--ink-dim);}
+
+/* salary bars */
+.salary-bars{display:grid; gap:16px; margin-top:10px;}
+.salary-row{display:grid; grid-template-columns:200px 1fr 90px; align-items:center; gap:14px; font-size:0.9rem; color:var(--ink-dim);}
+.salary-track{height:12px; background:var(--bg-soft); border:1px solid var(--panel-line); border-radius:6px; overflow:hidden;}
+.salary-fill{height:100%; background:linear-gradient(90deg, var(--gold), var(--gold-bright));}
+
+/* FAQ accordion */
+.faq{border-top:1px solid var(--panel-line);}
+.faq-item{border-bottom:1px solid var(--panel-line);}
+.faq-item summary{
+  padding:20px 4px; cursor:pointer; font-weight:600; font-size:1rem; list-style:none;
+  display:flex; justify-content:space-between; align-items:center; color:var(--ink);
+}
+.faq-item summary::after{content:'+'; color:var(--gold-bright); font-size:1.3rem; font-weight:400;}
+.faq-item[open] summary::after{content:'–';}
+.faq-item p{padding:0 4px 20px; color:var(--ink-dim); font-size:0.94rem; max-width:700px;}
+
+/* CTA band */
+.cta-band{background:var(--navy-deep); border:1px solid var(--panel-line); border-radius:8px; padding:48px; text-align:center; margin-top:10px;}
+.cta-band h2{font-size:1.8rem;}
+.cta-band p{margin-top:10px; color:var(--ink-dim); max-width:520px; margin-left:auto; margin-right:auto;}
+.cta-actions{display:flex; gap:16px; justify-content:center; margin-top:26px; flex-wrap:wrap;}
+
+.btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:3px; font-weight:600; font-size:0.95rem; border:1.5px solid var(--gold); transition:transform .15s ease;}
+.btn:hover{transform:translateY(-2px);}
+.btn-solid{background:var(--gold); color:var(--navy-deep);}
+.btn-solid:hover{background:var(--gold-bright); border-color:var(--gold-bright);}
+.btn-outline{background:transparent; color:var(--gold-bright);}
+.btn-outline:hover{background:rgba(37,99,235,0.08);}
+
+/* other-streams nav */
+.other-streams{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px;}
+.stream-pill{
+  border:1px solid var(--panel-line); border-radius:20px; padding:9px 18px; font-size:0.86rem; color:var(--ink-dim);
+}
+.stream-pill:hover{border-color:var(--gold); color:var(--gold-bright);}
+.stream-pill.active{background:var(--gold); color:var(--navy-deep); border-color:var(--gold); font-weight:700;}
+
+footer{background:var(--navy-deep); color:var(--ink-dim); padding:50px 0 30px; border-top:1px solid var(--panel-line);}
+.footer-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px;}
+.footer-grid .logo{color:var(--ink);}
+.footer-links{display:flex; gap:24px; flex-wrap:wrap; font-size:0.88rem;}
+.footer-bottom{margin-top:36px; padding-top:18px; border-top:1px solid var(--panel-line); font-size:0.78rem; opacity:0.7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+@media (max-width: 900px){
+  .navlinks{display:none;}
+  .stat-bar{grid-template-columns:1fr 1fr;}
+  .fit-grid{grid-template-columns:1fr;}
+  .card-grid{grid-template-columns:1fr 1fr;}
+  .salary-row{grid-template-columns:120px 1fr 70px;}
+}
+@media (max-width: 560px){
+  .stat-bar{grid-template-columns:1fr;}
+  .card-grid{grid-template-columns:1fr;}
+  .cta-band{padding:30px;}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+
+
+  footer, footer .logo, footer a{color:#EAF1FC;}
+  footer .footer-grid .logo{color:#FFFFFF;}
+  footer .footer-bottom{color:#BBD0EF; opacity:1;}
+  .cta-band, .cta-band h2, .cta-band p{color:#FFFFFF;}
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav wrap" style="padding-left:0; padding-right:0;">
+    <a class="logo" href="../index.html">Disha<span class="dot">.</span></a>
+    <div class="navlinks">
+      <a href="../index.html#streams">All Streams</a>
+      <a href="../index.html#quiz">Stream Quiz</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#contact">Talk to a Counsellor</a>
+    </div>
+    <a href="../index.html#contact" class="nav-cta">Get Guidance</a>
+  </nav>
+</header>
+
+<div class="wrap breadcrumb">
+  <a href="../index.html">Home</a> / <a href="../index.html#streams">Streams</a> / Arts / Humanities
+</div>
+
+<section class="stream-hero">
+  <div class="wrap">
+    <div class="eyebrow">Stream 03 of 06</div>
+    <h1>Arts &amp; Humanities: the widest range of subjects, the widest range of careers.</h1>
+    <p class="lead">Often picked last, chosen seriously by very few — yet it leads to some of India's most competitive and respected careers: law, the civil services, design, and journalism among them.</p>
+
+    <div class="stat-bar">
+      <div class="stat-cell"><div class="mono">Subjects</div><div class="val">History, PolSci, Psych + more</div></div>
+      <div class="stat-cell"><div class="mono">Typical duration after 12th</div><div class="val">3–5 yrs</div></div>
+      <div class="stat-cell"><div class="mono">Key entrances</div><div class="val">CUET · CLAT · UPSC</div></div>
+      <div class="stat-cell"><div class="mono">Starting salary range</div><div class="val">₹3L–10L/yr</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What Arts/Humanities covers in 11th–12th</h2>
+      <p>This stream has the most elective flexibility of the three traditional streams — most schools let you mix and match from a long list.</p>
+    </div>
+    <div class="chip-row">
+      <span class="chip">History</span><span class="chip">Political Science</span><span class="chip">Psychology</span>
+      <span class="chip">Sociology</span><span class="chip">Geography</span><span class="chip">Economics</span>
+      <span class="chip">Fine Arts</span><span class="chip">Languages (Hindi/English/regional)</span>
+      <span class="chip">Philosophy</span><span class="chip">Legal Studies</span><span class="chip">Mass Media / Journalism</span>
+    </div>
+    <p style="margin-top:18px; color:var(--ink-dim); font-size:0.92rem; max-width:680px;">Your exact subject combination matters for specific entrances — Legal Studies/Political Science helps for law, Economics helps for CUET-based economics programs, and Psychology is foundational if you're aiming at clinical or counselling psychology later.</p>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Is Arts the right fit for you?</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card good">
+        <h3>Choose Arts if</h3>
+        <ul>
+          <li>You're genuinely interested in people, society, history, or ideas — not just avoiding Maths</li>
+          <li>You enjoy reading, writing, and forming arguments or opinions</li>
+          <li>You're aiming at law, civil services, journalism, design, or psychology</li>
+          <li>You want flexibility to figure out your exact direction over the next few years</li>
+        </ul>
+      </div>
+      <div class="fit-card bad">
+        <h3>Reconsider Arts if</h3>
+        <ul>
+          <li>You're picking it purely to avoid effort — Arts at a serious level is just as demanding</li>
+          <li>You haven't researched what specific career you'd aim for after</li>
+          <li>You want a structured, numbers-based career — Commerce or Science PCM may suit you better</li>
+          <li>You're under family pressure to pick Science/Commerce without weighing your own interest</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>Career paths from Arts</h2></div>
+    <div class="table-scroll">
+      <table class="dtable">
+        <thead><tr><th>Career path</th><th>Qualification</th><th>Entrance exam</th><th>Duration</th><th>Where you'd work</th></tr></thead>
+        <tbody>
+          <tr><td class="key">Lawyer</td><td>BA LLB (5-yr integrated) or LLB (3-yr after any degree)</td><td>CLAT, AILET, state law entrances</td><td>3–5 yrs</td><td>Law firms, litigation, corporate legal teams</td></tr>
+          <tr><td class="key">Civil servant (IAS/IPS/IFS)</td><td>Any bachelor's degree</td><td>UPSC Civil Services Exam</td><td>3 yrs degree + exam prep</td><td>Government administration, police, foreign service</td></tr>
+          <tr><td class="key">Journalist</td><td>BA Journalism/Mass Comm</td><td>IIMC entrance, CUET, institute-specific</td><td>3 yrs</td><td>News organisations, digital media, PR</td></tr>
+          <tr><td class="key">Psychologist / counsellor</td><td>BA Psychology → MA/M.Phil</td><td>CUET, DU entrance</td><td>3 + 2 yrs</td><td>Hospitals, schools, private practice, HR</td></tr>
+          <tr><td class="key">UX / graphic designer</td><td>BA + design portfolio, or B.Des</td><td>NID DAT, UCEED</td><td>3–4 yrs</td><td>Design studios, tech companies, agencies</td></tr>
+          <tr><td class="key">Teacher / academic</td><td>BA → B.Ed → MA/Ph.D</td><td>CUET, CTET (for school teaching)</td><td>3 + 2 yrs</td><td>Schools, colleges, universities</td></tr>
+          <tr><td class="key">Social worker / policy researcher</td><td>BA → MSW / MA Public Policy</td><td>CUET, TISS-NET</td><td>3 + 2 yrs</td><td>NGOs, think tanks, government bodies</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>Entrance exams to know</h2></div>
+    <div class="card-grid">
+      <div class="info-card"><div class="mono">Law</div><h4>CLAT &amp; AILET</h4><p>CLAT is the common entrance for most National Law Universities; AILET is specific to NLU Delhi. Both can be attempted right after 12th.</p></div>
+      <div class="info-card"><div class="mono">University</div><h4>CUET</h4><p>Required for BA programs at central universities including Delhi University, JNU, and BHU.</p></div>
+      <div class="info-card"><div class="mono">Civil services</div><h4>UPSC CSE</h4><p>India's most competitive exam, attempted after any bachelor's degree — Arts graduates often have an edge given the GS-heavy syllabus.</p></div>
+      <div class="info-card"><div class="mono">Design</div><h4>NID DAT / UCEED</h4><p>Entrance for design programs — tests creativity, visual reasoning, and problem-solving rather than pure academics.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>Where Arts students usually study</h2></div>
+    <div class="card-grid">
+      <div class="info-card"><div class="mono">Top colleges</div><h4>Lady Shri Ram, Hindu College, St. Stephen's</h4><p>Among Delhi University's most competitive colleges for BA programs.</p></div>
+      <div class="info-card"><div class="mono">Law</div><h4>NLSIU Bangalore, NALSAR, NLU Delhi</h4><p>India's top National Law Universities, admitted via CLAT/AILET.</p></div>
+      <div class="info-card"><div class="mono">Design &amp; media</div><h4>NID, IIMC, Symbiosis</h4><p>For design, journalism, and mass communication specialisations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>What you could be earning, over time</h2></div>
+    <div class="salary-bars">
+      <div class="salary-row"><span>Fresher (BA graduate)</span><span class="salary-track"><span class="salary-fill" style="width:18%"></span></span><span class="mono">₹3–5L</span></div>
+      <div class="salary-row"><span>Junior lawyer (top NLU)</span><span class="salary-track"><span class="salary-fill" style="width:50%"></span></span><span class="mono">₹8–15L</span></div>
+      <div class="salary-row"><span>IAS officer (entry)</span><span class="salary-track"><span class="salary-fill" style="width:42%"></span></span><span class="mono">₹7–12L + perks</span></div>
+      <div class="salary-row"><span>UX designer (3-5 yrs)</span><span class="salary-track"><span class="salary-fill" style="width:48%"></span></span><span class="mono">₹8–16L</span></div>
+      <div class="salary-row"><span>Senior journalist / editor</span><span class="salary-track"><span class="salary-fill" style="width:40%"></span></span><span class="mono">₹7–14L</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>A typical Arts timeline</h2></div>
+    <div class="timeline">
+      <div class="tl-item"><div class="mono">CLASS 11–12</div><h4>Build your subject combination</h4><p>Choose electives with your target career in mind — Legal Studies for law, Psychology for counselling, Economics for policy.</p></div>
+      <div class="tl-item"><div class="mono">DEGREE (3 YRS) OR INTEGRATED LAW (5 YRS)</div><h4>BA / BA LLB</h4><p>Core humanities degree, or a direct 5-year integrated law program via CLAT.</p></div>
+      <div class="tl-item"><div class="mono">POST-DEGREE</div><h4>Specialise, work, or prepare for UPSC</h4><p>Master's degree, entry-level job, or multi-year UPSC preparation alongside or after graduation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item"><summary>Is Arts a "lesser" stream compared to Science and Commerce?</summary><p>No — that perception is outdated. Arts leads to some of India's most competitive and respected careers, including law, the civil services, and design. The stigma usually comes from students choosing it without real interest rather than from the stream itself.</p></details>
+      <details class="faq-item"><summary>Can I do an integrated law course right after 12th?</summary><p>Yes, BA LLB and similar 5-year integrated law programs are designed for students straight out of 12th, via CLAT or AILET — no separate bachelor's degree needed first.</p></details>
+      <details class="faq-item"><summary>Do I need to know my exact career before choosing Arts?</summary><p>No, but it helps to choose electives strategically. If you're unsure, Political Science, Economics, and English keep the widest range of options (law, civil services, journalism, policy) open simultaneously.</p></details>
+      <details class="faq-item"><summary>Is the civil services exam only for Arts students?</summary><p>No — anyone with a bachelor's degree, regardless of stream, can attempt UPSC CSE. Arts/Humanities students often find the General Studies syllabus more familiar, but it's open to all.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Curious if Arts fits your interests better than Science or Commerce?</h2>
+      <p>Take the 3-minute stream quiz, or talk to a counsellor before you lock your subjects.</p>
+      <div class="cta-actions">
+        <a href="../index.html#quiz" class="btn btn-solid">Take the stream quiz</a>
+        <a href="../index.html#contact" class="btn btn-outline">Talk to a counsellor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:18px;"><h2 style="font-size:1.3rem;">Explore other streams</h2></div>
+    <div class="other-streams">
+      <a class="stream-pill" href="science.html">Science</a>
+      <a class="stream-pill" href="commerce.html">Commerce</a>
+      <a class="stream-pill active" href="arts.html">Arts / Humanities</a>
+      <a class="stream-pill" href="vocational.html">Vocational / ITI</a>
+      <a class="stream-pill" href="diploma.html">Polytechnic Diploma</a>
+      <a class="stream-pill" href="defence.html">Defence Prep</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="../index.html">Disha<span class="dot">.</span></a>
+        <p style="margin-top:10px; font-size:0.85rem; opacity:0.75; max-width:280px;">Career direction for students figuring out what comes after the board exams.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#streams">10th Pass</a>
+        <a href="../index.html#after12">12th Pass</a>
+        <a href="../index.html#quiz">Stream Quiz</a>
+        <a href="../index.html#resources">Resources</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Disha. All rights reserved.</span>
+      <span>Made for students, not for marks.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commerce Stream Guide — Careers, Exams & Colleges | Disha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Disha — shared stream-page styles ===== */
+:root{
+  --bg:#FFFFFF;
+  --bg-soft:#F1F5FB;
+  --panel:#FFFFFF;
+  --panel-line:#DCE6F2;
+  --ink:#142A4C;
+  --ink-dim:#5C6B82;
+  --gold:#2563EB;
+  --gold-bright:#3B82F6;
+  --emerald:#0E8F6F;
+  --garnet:#C0392B;
+  --navy-deep:#163E7C;
+  --shadow: 0 24px 50px -20px rgba(28,55,98,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display{
+  font-family:'Fraunces',serif;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.mono{font-family:'JetBrains Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:2px;
+}
+
+/* HEADER */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--panel-line);
+}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px;}
+.logo{font-family:'Fraunces',serif; font-weight:700; font-size:1.5rem; color:var(--ink); display:flex; align-items:center; gap:8px;}
+.logo .dot{color:var(--gold);}
+.navlinks{display:flex; gap:28px; font-weight:600; font-size:0.92rem; color:var(--ink-dim); flex-wrap:wrap;}
+.navlinks a:hover{color:var(--gold-bright);}
+.nav-cta{background:var(--gold); color:var(--navy-deep); padding:10px 20px; border-radius:3px; font-weight:700; font-size:0.88rem; border:1px solid var(--gold); white-space:nowrap;}
+.nav-cta:hover{background:var(--gold-bright); border-color:var(--gold-bright);}
+
+.breadcrumb{font-size:0.8rem; color:var(--ink-dim); padding:18px 0 0;}
+.breadcrumb a:hover{color:var(--gold-bright);}
+
+/* HERO */
+.stream-hero{padding:50px 0 70px; position:relative; background:radial-gradient(circle at 85% 0%, rgba(37,99,235,0.07), transparent 55%);}
+.eyebrow{font-family:'JetBrains Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-bright); font-weight:700; display:inline-flex; align-items:center; gap:10px; margin-bottom:18px;}
+.eyebrow::before{content:''; width:30px; height:2px; background:var(--gold-bright);}
+.stream-hero h1{font-size:clamp(2.2rem,4.6vw,3.4rem); font-weight:700; line-height:1.08; max-width:780px;}
+.stream-hero .lead{margin-top:18px; font-size:1.12rem; color:var(--ink-dim); max-width:680px;}
+
+.stat-bar{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--panel-line); border:1px solid var(--panel-line); border-radius:6px; margin-top:36px; overflow:hidden;}
+.stat-cell{background:var(--panel); padding:20px 22px;}
+.stat-cell .mono{font-size:0.68rem; color:var(--gold-bright); text-transform:uppercase; letter-spacing:0.07em;}
+.stat-cell .val{font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;}
+
+/* SECTIONS */
+.section{padding:70px 0;}
+.section-bordered{border-top:1px solid var(--panel-line);}
+.section-head{max-width:720px; margin-bottom:40px;}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.2rem); font-weight:700;}
+.section-head p{margin-top:12px; font-size:1.02rem; color:var(--ink-dim);}
+
+/* two-col pros/cons */
+.fit-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+.fit-card{background:var(--panel); border:1px solid var(--panel-line); border-radius:6px; padding:26px;}
+.fit-card.good{border-top:3px solid var(--emerald);}
+.fit-card.bad{border-top:3px solid var(--garnet);}
+.fit-card h3{font-size:1.15rem; margin-bottom:14px;}
+.fit-card ul{list-style:none;}
+.fit-card li{padding:8px 0; border-top:1px dashed var(--panel-line); font-size:0.94rem; color:var(--ink-dim); display:flex; gap:10px;}
+.fit-card li:first-child{border-top:none;}
+.fit-card.good li::before{content:'✓'; color:var(--emerald); font-weight:700;}
+.fit-card.bad li::before{content:'✕'; color:var(--garnet); font-weight:700;}
+
+/* subject chips */
+.chip-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+.chip{background:var(--bg-soft); border:1px solid var(--panel-line); padding:8px 16px; border-radius:20px; font-size:0.86rem; color:var(--ink-dim);}
+
+/* tables */
+.dtable{width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--panel-line); font-size:0.9rem;}
+.dtable th, .dtable td{border:1px solid var(--panel-line); padding:14px 16px; text-align:left; vertical-align:top; color:var(--ink-dim);}
+.dtable thead th{background:var(--navy-deep); color:var(--gold-bright); font-family:'JetBrains Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em;}
+.dtable td.key{font-family:'JetBrains Mono',monospace; color:var(--ink); font-weight:700; white-space:nowrap;}
+.dtable tbody tr:nth-child(even){background:rgba(37,99,235,0.04);}
+.table-scroll{overflow-x:auto;}
+
+/* timeline */
+.timeline{display:grid; gap:0; border-left:2px solid var(--panel-line); margin-left:8px;}
+.tl-item{position:relative; padding:0 0 32px 30px;}
+.tl-item::before{content:''; position:absolute; left:-7px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--gold); border:2px solid var(--bg);}
+.tl-item .mono{font-size:0.72rem; color:var(--gold-bright);}
+.tl-item h4{margin-top:4px; font-size:1.05rem;}
+.tl-item p{margin-top:6px; font-size:0.9rem; color:var(--ink-dim); max-width:560px;}
+
+/* exam / college cards */
+.card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.info-card{background:var(--panel); border:1px solid var(--panel-line); border-radius:6px; padding:24px; border-left:3px solid var(--gold);}
+.info-card .mono{font-size:0.68rem; color:var(--gold-bright); text-transform:uppercase; letter-spacing:0.06em;}
+.info-card h4{font-size:1.1rem; margin-top:8px;}
+.info-card p{font-size:0.88rem; margin-top:8px; color:var(--ink-dim);}
+
+/* salary bars */
+.salary-bars{display:grid; gap:16px; margin-top:10px;}
+.salary-row{display:grid; grid-template-columns:200px 1fr 90px; align-items:center; gap:14px; font-size:0.9rem; color:var(--ink-dim);}
+.salary-track{height:12px; background:var(--bg-soft); border:1px solid var(--panel-line); border-radius:6px; overflow:hidden;}
+.salary-fill{height:100%; background:linear-gradient(90deg, var(--gold), var(--gold-bright));}
+
+/* FAQ accordion */
+.faq{border-top:1px solid var(--panel-line);}
+.faq-item{border-bottom:1px solid var(--panel-line);}
+.faq-item summary{
+  padding:20px 4px; cursor:pointer; font-weight:600; font-size:1rem; list-style:none;
+  display:flex; justify-content:space-between; align-items:center; color:var(--ink);
+}
+.faq-item summary::after{content:'+'; color:var(--gold-bright); font-size:1.3rem; font-weight:400;}
+.faq-item[open] summary::after{content:'–';}
+.faq-item p{padding:0 4px 20px; color:var(--ink-dim); font-size:0.94rem; max-width:700px;}
+
+/* CTA band */
+.cta-band{background:var(--navy-deep); border:1px solid var(--panel-line); border-radius:8px; padding:48px; text-align:center; margin-top:10px;}
+.cta-band h2{font-size:1.8rem;}
+.cta-band p{margin-top:10px; color:var(--ink-dim); max-width:520px; margin-left:auto; margin-right:auto;}
+.cta-actions{display:flex; gap:16px; justify-content:center; margin-top:26px; flex-wrap:wrap;}
+
+.btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:3px; font-weight:600; font-size:0.95rem; border:1.5px solid var(--gold); transition:transform .15s ease;}
+.btn:hover{transform:translateY(-2px);}
+.btn-solid{background:var(--gold); color:var(--navy-deep);}
+.btn-solid:hover{background:var(--gold-bright); border-color:var(--gold-bright);}
+.btn-outline{background:transparent; color:var(--gold-bright);}
+.btn-outline:hover{background:rgba(37,99,235,0.08);}
+
+/* other-streams nav */
+.other-streams{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px;}
+.stream-pill{
+  border:1px solid var(--panel-line); border-radius:20px; padding:9px 18px; font-size:0.86rem; color:var(--ink-dim);
+}
+.stream-pill:hover{border-color:var(--gold); color:var(--gold-bright);}
+.stream-pill.active{background:var(--gold); color:var(--navy-deep); border-color:var(--gold); font-weight:700;}
+
+footer{background:var(--navy-deep); color:var(--ink-dim); padding:50px 0 30px; border-top:1px solid var(--panel-line);}
+.footer-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px;}
+.footer-grid .logo{color:var(--ink);}
+.footer-links{display:flex; gap:24px; flex-wrap:wrap; font-size:0.88rem;}
+.footer-bottom{margin-top:36px; padding-top:18px; border-top:1px solid var(--panel-line); font-size:0.78rem; opacity:0.7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+@media (max-width: 900px){
+  .navlinks{display:none;}
+  .stat-bar{grid-template-columns:1fr 1fr;}
+  .fit-grid{grid-template-columns:1fr;}
+  .card-grid{grid-template-columns:1fr 1fr;}
+  .salary-row{grid-template-columns:120px 1fr 70px;}
+}
+@media (max-width: 560px){
+  .stat-bar{grid-template-columns:1fr;}
+  .card-grid{grid-template-columns:1fr;}
+  .cta-band{padding:30px;}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+
+
+  footer, footer .logo, footer a{color:#EAF1FC;}
+  footer .footer-grid .logo{color:#FFFFFF;}
+  footer .footer-bottom{color:#BBD0EF; opacity:1;}
+  .cta-band, .cta-band h2, .cta-band p{color:#FFFFFF;}
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav wrap" style="padding-left:0; padding-right:0;">
+    <a class="logo" href="../index.html">Disha<span class="dot">.</span></a>
+    <div class="navlinks">
+      <a href="../index.html#streams">All Streams</a>
+      <a href="../index.html#quiz">Stream Quiz</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#contact">Talk to a Counsellor</a>
+    </div>
+    <a href="../index.html#contact" class="nav-cta">Get Guidance</a>
+  </nav>
+</header>
+
+<div class="wrap breadcrumb">
+  <a href="../index.html">Home</a> / <a href="../index.html#streams">Streams</a> / Commerce
+</div>
+
+<section class="stream-hero">
+  <div class="wrap">
+    <div class="eyebrow">Stream 02 of 06</div>
+    <h1>Commerce: the most direct route into business, finance, and numbers.</h1>
+    <p class="lead">If you're drawn to how money, markets, and businesses work, Commerce gives you a structured, practical foundation — and several of India's most respected professional qualifications run straight through it.</p>
+
+    <div class="stat-bar">
+      <div class="stat-cell"><div class="mono">Subjects</div><div class="val">Accounts, Eco, BST + 2</div></div>
+      <div class="stat-cell"><div class="mono">Typical duration after 12th</div><div class="val">3–5 yrs</div></div>
+      <div class="stat-cell"><div class="mono">Key entrances</div><div class="val">CA Foundation · CUET</div></div>
+      <div class="stat-cell"><div class="mono">Starting salary range</div><div class="val">₹3L–10L/yr</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What Commerce covers in 11th–12th</h2>
+      <p>Most Commerce students take three core subjects, with Maths as an optional fourth that quietly changes which careers stay open.</p>
+    </div>
+    <div class="card-grid">
+      <div class="info-card"><div class="mono">Core</div><h4>Accountancy</h4><p>Bookkeeping, financial statements, and the language every finance career is built on.</p></div>
+      <div class="info-card"><div class="mono">Core</div><h4>Economics</h4><p>How markets, money, and government policy work — micro and macro level.</p></div>
+      <div class="info-card"><div class="mono">Core</div><h4>Business Studies</h4><p>How companies are structured, managed, and grown — the "how business actually works" subject.</p></div>
+    </div>
+    <div class="chip-row">
+      <span class="chip">Accountancy</span><span class="chip">Economics</span><span class="chip">Business Studies</span>
+      <span class="chip">Mathematics (optional, recommended)</span><span class="chip">Informatics Practices</span>
+      <span class="chip">English</span><span class="chip">Entrepreneurship (optional)</span>
+    </div>
+    <p style="margin-top:18px; color:var(--ink-dim); font-size:0.92rem; max-width:680px;">Maths is optional in Commerce in most boards, but it's required for B.Com (Hons) at top colleges, CA's quantitative aptitude, economics honours, and most analytics-related careers. Drop it only if you're certain you won't need it later.</p>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Is Commerce the right fit for you?</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-card good">
+        <h3>Choose Commerce if</h3>
+        <ul>
+          <li>You like working with numbers in a real-world, applied way — budgets, accounts, markets</li>
+          <li>You're interested in how businesses are run, funded, or started</li>
+          <li>You want a stream with strong professional qualifications (CA/CS/CMA) that don't require a 4-year degree first</li>
+          <li>You're comfortable with structured, rule-based subjects like Accountancy</li>
+        </ul>
+      </div>
+      <div class="fit-card bad">
+        <h3>Reconsider Commerce if</h3>
+        <ul>
+          <li>You're choosing it only to avoid Science, without real interest in business or finance</li>
+          <li>You strongly dislike repetitive, rule-heavy subjects like bookkeeping</li>
+          <li>Your real interest is technical/scientific work — Commerce won't lead there directly</li>
+          <li>You want to keep medicine or core engineering open — those need PCM/PCB specifically</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Career paths from Commerce</h2>
+    </div>
+    <div class="table-scroll">
+      <table class="dtable">
+        <thead><tr><th>Career path</th><th>Qualification</th><th>Entrance / route</th><th>Duration</th><th>Where you'd work</th></tr></thead>
+        <tbody>
+          <tr><td class="key">Chartered Accountant</td><td>CA (Foundation → Inter → Final)</td><td>ICAI registration, no separate entrance</td><td>~5 yrs incl. articleship</td><td>Audit firms, corporates, own practice</td></tr>
+          <tr><td class="key">Company Secretary</td><td>CS (via ICSI)</td><td>ICSI registration</td><td>~3 yrs</td><td>Corporate compliance, legal-finance roles</td></tr>
+          <tr><td class="key">Cost & Management Accountant</td><td>CMA (via ICMAI)</td><td>ICMAI registration</td><td>~3-4 yrs</td><td>Manufacturing, costing, corporate finance</td></tr>
+          <tr><td class="key">Investment banker / analyst</td><td>B.Com/BBA + MBA or CFA</td><td>CUET, CAT/college-specific, CFA exams</td><td>3 + 2 yrs</td><td>Banks, financial services, consulting</td></tr>
+          <tr><td class="key">Bank officer (PO)</td><td>Any bachelor's degree</td><td>IBPS PO, SBI PO</td><td>3 yrs degree + exam</td><td>Public and private sector banks</td></tr>
+          <tr><td class="key">Business manager</td><td>BBA / B.Com + MBA</td><td>CUET, CAT, state MBA entrances</td><td>3 + 2 yrs</td><td>Corporates, startups, family business</td></tr>
+          <tr><td class="key">Economist / policy analyst</td><td>B.A./B.Sc Economics (Hons) → M.A.</td><td>CUET, DSE entrance</td><td>3 + 2 yrs</td><td>Government, think tanks, research firms</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>Entrance exams and qualifying routes</h2></div>
+    <div class="card-grid">
+      <div class="info-card"><div class="mono">Professional</div><h4>CA Foundation</h4><p>Can be attempted right after 12th boards — no separate "entrance exam" hurdle, just ICAI registration and self-study or coaching.</p></div>
+      <div class="info-card"><div class="mono">University</div><h4>CUET</h4><p>Common University Entrance Test — required for admission to most central universities' B.Com/BBA/Economics programs.</p></div>
+      <div class="info-card"><div class="mono">Management</div><h4>IPMAT</h4><p>Integrated Programme in Management Aptitude Test — direct route into IIM's 5-year integrated management programs after 12th.</p></div>
+      <div class="info-card"><div class="mono">Private universities</div><h4>SET, NPAT and similar</h4><p>Entrance tests for private universities like Symbiosis and NMIMS offering BBA/B.Com programs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>Where Commerce students usually study</h2></div>
+    <div class="card-grid">
+      <div class="info-card"><div class="mono">Top colleges</div><h4>SRCC, Hindu College, Christ University</h4><p>Among India's most sought-after for B.Com (Hons), with strong placement records.</p></div>
+      <div class="info-card"><div class="mono">Management</div><h4>NMIMS, Symbiosis, Christ, IIM-integrated</h4><p>For BBA and integrated management programs.</p></div>
+      <div class="info-card"><div class="mono">Professional bodies</div><h4>ICAI, ICSI, ICMAI</h4><p>Not "colleges" in the traditional sense, but the actual qualifying bodies for CA, CS, and CMA.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>What you could be earning, over time</h2></div>
+    <div class="salary-bars">
+      <div class="salary-row"><span>Fresher (B.Com/BBA)</span><span class="salary-track"><span class="salary-fill" style="width:22%"></span></span><span class="mono">₹3–6L</span></div>
+      <div class="salary-row"><span>Newly qualified CA</span><span class="salary-track"><span class="salary-fill" style="width:45%"></span></span><span class="mono">₹7–12L</span></div>
+      <div class="salary-row"><span>Bank PO (5 yrs)</span><span class="salary-track"><span class="salary-fill" style="width:38%"></span></span><span class="mono">₹8–14L</span></div>
+      <div class="salary-row"><span>MBA from top B-school</span><span class="salary-track"><span class="salary-fill" style="width:70%"></span></span><span class="mono">₹15–28L</span></div>
+      <div class="salary-row"><span>Senior CA / partner</span><span class="salary-track"><span class="salary-fill" style="width:85%"></span></span><span class="mono">₹20L+</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>A typical Commerce timeline</h2></div>
+    <div class="timeline">
+      <div class="tl-item"><div class="mono">CLASS 11</div><h4>Foundation year</h4><p>Accounts and Economics basics; many students start CA Foundation prep alongside school.</p></div>
+      <div class="tl-item"><div class="mono">CLASS 12</div><h4>Boards + CA Foundation</h4><p>Board exams, plus the option to attempt CA Foundation right after 12th results.</p></div>
+      <div class="tl-item"><div class="mono">DEGREE / ARTICLESHIP</div><h4>B.Com / BBA, or CA Inter + articleship</h4><p>Either a regular degree, or 3 years of practical CA training under a practicing chartered accountant.</p></div>
+      <div class="tl-item"><div class="mono">POST-QUALIFICATION</div><h4>Specialise or go corporate</h4><p>CA Final, MBA, or direct placement into finance, banking, or business roles.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head"><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item"><summary>Do I need Maths in Commerce?</summary><p>It's optional in most boards, but strongly recommended if you might want B.Com (Hons) at a top college, Economics Honours, or anything analytics-related. Without it, your options narrow somewhat but don't disappear.</p></details>
+      <details class="faq-item"><summary>Is CA harder than a regular degree?</summary><p>CA is demanding because it combines self-study, low pass percentages at each level, and 2-3 years of articleship alongside study. It rewards consistency over raw talent — many average students who stay disciplined clear it.</p></details>
+      <details class="faq-item"><summary>Can a Commerce student switch to engineering or medicine later?</summary><p>Not directly into B.Tech/MBBS without PCM/PCB in 12th, but Commerce students can pursue BCA, B.Sc IT, or analytics-focused careers in tech without re-doing science subjects.</p></details>
+      <details class="faq-item"><summary>What's the real difference between CA, CS, and CMA?</summary><p>CA focuses on accounting, audit, and taxation; CS focuses on corporate law and compliance; CMA focuses on cost and management accounting. All three are professional qualifications run by their own institutes, not university degrees.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Still weighing Commerce against Science or Arts?</h2>
+      <p>Take the 3-minute stream quiz, or talk to a counsellor before you lock your subjects.</p>
+      <div class="cta-actions">
+        <a href="../index.html#quiz" class="btn btn-solid">Take the stream quiz</a>
+        <a href="../index.html#contact" class="btn btn-outline">Talk to a counsellor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bordered">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:18px;"><h2 style="font-size:1.3rem;">Explore other streams</h2></div>
+    <div class="other-streams">
+      <a class="stream-pill" href="science.html">Science</a>
+      <a class="stream-pill active" href="commerce.html">Commerce</a>
+      <a class="stream-pill" href="arts.html">Arts / Humanities</a>
+      <a class="stream-pill" href="vocational.html">Vocational / ITI</a>
+      <a class="stream-pill" href="diploma.html">Polytechnic Diploma</a>
+      <a class="stream-pill" href="defence.html">Defence Prep</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="../index.html">Disha<span class="dot">.</span></a>
+        <p style="margin-top:10px; font-size:0.85rem; opacity:0.75; max-width:280px;">Career direction for students figuring out what comes after the board exams.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#streams">10th Pass</a>
+        <a href="../index.html#after12">12th Pass</a>
+        <a href="../index.html#quiz">Stream Quiz</a>
+        <a href="../index.html#resources">Resources</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Disha. All rights reserved.</span>
+      <span>Made for students, not for marks.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

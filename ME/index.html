@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disha — Find Your Direction After 10th & 12th</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F1F5FB;
+    --panel:#FFFFFF;
+    --panel-line:#DCE6F2;
+    --ink:#142A4C;
+    --ink-dim:#5C6B82;
+    --gold:#2563EB;
+    --gold-bright:#3B82F6;
+    --emerald:#0E8F6F;
+    --garnet:#C0392B;
+    --navy-deep:#163E7C;
+    --shadow: 0 24px 50px -20px rgba(28,55,98,0.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  .ruled{
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 37px, var(--panel-line) 38px
+    );
+    background-color:var(--bg-soft);
+    opacity:1;
+  }
+  .ruled{ background-image: linear-gradient(rgba(255,255,255,0.97), rgba(255,255,255,0.97)), repeating-linear-gradient(to bottom, transparent 0px, transparent 37px, var(--panel-line) 38px); }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:2px;
+  }
+
+  /* ===== HEADER ===== */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--panel-line);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;   /* pushes logo left, nav-right group right */
+  padding:18px 28px;
+}
+.logo{
+  font-family:'Fraunces',serif; font-weight:700; font-size:1.5rem;
+  color:var(--ink); display:flex; justify-content:center; align-items:center; gap:8px;
+}
+.logo .dot{color:var(--gold);}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:28px;        /* distance between "Resources" and the button */
+}
+.navlinks{
+  display:flex;
+  gap:32px;        /* distance between the nav links themselves */
+  font-weight:600;
+  font-size:0.95rem;
+  color:var(--ink-dim);
+}
+.navlinks a{position:relative; padding-bottom:4px;}
+.navlinks a:hover{color:var(--gold-bright);}
+
+.nav-cta{
+  background:var(--gold); color:#FFFFFF;
+  padding:10px 20px; border-radius:3px; font-weight:700; font-size:0.9rem;
+  border:1px solid var(--gold);
+}
+.nav-cta:hover{background:var(--gold-bright); border-color:var(--gold-bright);}
+
+.burger{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+.burger span{width:26px; height:2px; background:var(--ink); display:block;}
+  /* ===== HERO ===== */
+  .hero{
+    position:relative; padding:100px 28px 90px; overflow:hidden;
+    background:radial-gradient(circle at 80% 0%, rgba(37,99,235,0.07), transparent 55%), var(--bg);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:50px; align-items:center;
+    max-width:1180px; margin:0 auto;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:0.78rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--gold-bright); font-weight:700;
+    display:inline-flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{content:''; width:30px; height:2px; background:var(--gold-bright);}
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.8rem); font-weight:700; line-height:1.05;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--gold-bright); font-weight:600;
+  }
+  .hero p.lead{
+    margin-top:24px; font-size:1.15rem; max-width:520px; color:var(--ink-dim);
+  }
+  .hero-actions{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:14px 26px;
+    border-radius:3px; font-weight:600; font-size:0.95rem; border:1.5px solid var(--gold);
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-solid{background:var(--gold); color:#FFFFFF; border-color:var(--gold);}
+  .btn-solid:hover{background:var(--gold-bright); border-color:var(--gold-bright);}
+  .btn-outline{background:transparent; color:var(--gold-bright);}
+  .btn-outline:hover{background:rgba(37,99,235,0.08);}
+
+  .card-stack{position:relative; height:420px;}
+  .markcard{
+    position:absolute; width:280px; background:var(--panel);
+    border:1px solid var(--panel-line); border-radius:6px; box-shadow:var(--shadow);
+    padding:20px 22px;
+  }
+  .markcard.back{top:10px; right:10px; transform:rotate(4deg); opacity:0.5; z-index:1;}
+  .markcard.front{top:60px; right:60px; z-index:2; border-color:var(--gold);}
+  .markcard .tag{
+    font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase;
+    letter-spacing:0.1em; color:var(--gold-bright); font-weight:700;
+  }
+  .markcard h3{font-size:1.15rem; margin-top:6px;}
+  .markcard .row{
+    display:flex; justify-content:space-between; font-size:0.85rem; padding:7px 0; color:var(--ink-dim);
+    border-bottom:1px dashed var(--panel-line);
+  }
+  .markcard .row span:last-child{color:var(--ink);}
+  .markcard .stamp{
+    margin-top:14px; display:inline-block; border:1.5px solid var(--gold); color:var(--gold-bright);
+    font-family:'JetBrains Mono',monospace; font-weight:700; font-size:0.7rem; padding:4px 10px;
+    transform:rotate(-6deg); border-radius:50%; text-align:center;
+  }
+
+  /* ===== SECTIONS ===== */
+  .section{padding:90px 0;}
+  .section-head{max-width:680px; margin-bottom:56px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem); font-weight:700;}
+  .section-head p{margin-top:14px; font-size:1.05rem; color:var(--ink-dim);}
+
+  /* ===== STREAM CARDS ===== */
+  .stream-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .stream-card{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:6px;
+    padding:28px 24px; position:relative; overflow:hidden;
+  }
+  .stream-card .num{
+    font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--gold-bright); font-weight:700;
+  }
+  .stream-card h3{font-size:1.35rem; margin-top:8px;}
+  .stream-card .subjects{margin-top:12px; font-size:0.85rem; color:var(--ink-dim);}
+  .stream-card ul{margin-top:14px; padding-left:0; list-style:none; font-size:0.88rem;}
+  .stream-card li{padding:6px 0; border-top:1px dashed var(--panel-line); display:flex; gap:8px; color:var(--ink-dim);}
+  .stream-card li::before{content:'→'; color:var(--gold); font-weight:700;}
+  .stream-card.science{border-top:3px solid var(--emerald);}
+  .stream-card.commerce{border-top:3px solid var(--gold);}
+  .stream-card.arts{border-top:3px solid var(--garnet);}
+  .stream-card.vocational{border-top:3px solid #3F6FB0;}
+  .stream-card.diploma{border-top:3px solid #7C6BB0;}
+  .stream-card.defence{border-top:3px solid #C2622E;}
+  .stream-card .readmore{display:inline-flex; align-items:center; gap:6px; margin-top:18px; font-size:0.85rem; font-weight:700; color:var(--gold-bright);}
+  .stream-card .readmore:hover{color:var(--gold);}
+
+  /* ===== TIMETABLE ===== */
+  .timetable{
+    width:100%; border-collapse:collapse; background:var(--panel);
+    border:1px solid var(--panel-line); font-size:0.9rem;
+  }
+  .timetable th, .timetable td{
+    border:1px solid var(--panel-line); padding:14px 16px; text-align:left; vertical-align:top; color:var(--ink-dim);
+  }
+  .timetable thead th{
+    background:var(--navy-deep); color:var(--gold-bright); font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;
+  }
+  .timetable td.period{font-family:'JetBrains Mono',monospace; color:var(--ink); font-weight:700; white-space:nowrap;}
+  .timetable tbody tr:nth-child(even){background:rgba(37,99,235,0.04);}
+  .table-scroll{overflow-x:auto;}
+
+  /* ===== QUIZ ===== */
+  .quiz-shell{
+    background:var(--navy-deep); border:1px solid var(--panel-line); border-radius:8px; padding:50px;
+    position:relative;
+  }
+  .quiz-paper{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:6px; padding:40px;
+    box-shadow:var(--shadow);
+  }
+  .quiz-progress{display:flex; gap:6px; margin-bottom:28px;}
+  .quiz-progress .bit{height:5px; flex:1; background:var(--panel-line); border-radius:2px;}
+  .quiz-progress .bit.done{background:var(--gold);}
+  .q-number{font-family:'JetBrains Mono',monospace; color:var(--gold-bright); font-weight:700; font-size:0.85rem;}
+  #quizQuestion{font-size:1.3rem; margin-top:10px; font-weight:600; color:var(--ink);}
+  .options{display:grid; gap:12px; margin-top:26px;}
+  .option-btn{
+    text-align:left; padding:16px 18px; border:1px solid var(--panel-line); border-radius:5px;
+    background:var(--bg-soft); color:var(--ink); cursor:pointer; font-size:0.98rem; font-family:'Inter',sans-serif;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .option-btn:hover{border-color:var(--gold); background:rgba(37,99,235,0.07);}
+  .quiz-footer{display:flex; justify-content:space-between; align-items:center; margin-top:30px;}
+  .quiz-footer button{
+    background:none; border:none; font-weight:600; color:var(--gold-bright); cursor:pointer; font-size:0.9rem;
+  }
+  .quiz-footer button:disabled{opacity:0.3; cursor:not-allowed;}
+  .quiz-footer span{color:var(--ink-dim);}
+
+  .result-sheet{display:none;}
+  .result-sheet.show{display:block;}
+  .result-stamp{
+    display:inline-block; border:2px solid var(--gold); color:var(--gold-bright);
+    font-family:'JetBrains Mono',monospace; font-weight:700; padding:8px 16px; border-radius:50%;
+    transform:rotate(-5deg); font-size:0.8rem; letter-spacing:0.05em;
+  }
+  .result-title{font-size:2rem; margin-top:18px;}
+  .result-bars{margin-top:26px; display:grid; gap:14px;}
+  .result-bar-row{display:grid; grid-template-columns:140px 1fr 50px; align-items:center; gap:12px; font-size:0.88rem; color:var(--ink-dim);}
+  .result-bar-track{height:10px; background:var(--panel-line); border-radius:6px; overflow:hidden;}
+  .result-bar-fill{height:100%; background:var(--gold); border-radius:6px; width:0%; transition:width .8s ease;}
+  .result-blurb{margin-top:24px; font-size:1rem; color:var(--ink-dim); max-width:540px;}
+  .retake{margin-top:24px;}
+
+  /* ===== RESOURCES ===== */
+  .resource-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .resource-card{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:6px; padding:22px;
+    border-left:3px solid var(--gold);
+  }
+  .resource-card .mono{font-size:0.7rem; color:var(--gold-bright); text-transform:uppercase; letter-spacing:0.07em;}
+  .resource-card h4{font-family:'Fraunces',serif; font-size:1.1rem; margin-top:8px; color:var(--ink);}
+  .resource-card p{font-size:0.86rem; margin-top:8px; color:var(--ink-dim);}
+
+  /* ===== CONTACT ===== */
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px;}
+  .contact-info h2{font-size:2rem;}
+  .contact-info p{margin-top:16px; color:var(--ink-dim); max-width:420px;}
+  .contact-detail{margin-top:30px; display:flex; flex-direction:column; gap:14px; font-size:0.95rem; color:var(--ink-dim);}
+  .contact-detail span.label{font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--gold-bright); text-transform:uppercase; display:block;}
+  form{background:var(--panel); border:1px solid var(--panel-line); border-radius:6px; padding:36px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block; font-size:0.85rem; font-weight:600; margin-bottom:7px; color:var(--ink);}
+  .field input, .field select, .field textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--panel-line); border-radius:4px;
+    font-family:'Inter',sans-serif; font-size:0.95rem; background:var(--bg-soft); color:var(--ink);
+  }
+  .field input::placeholder, .field textarea::placeholder{color:#8693A6;}
+  .field textarea{resize:vertical; min-height:90px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .submit-btn{
+    width:100%; padding:15px; background:var(--gold); color:#FFFFFF; border:none;
+    border-radius:4px; font-weight:700; font-size:0.98rem; cursor:pointer; margin-top:6px;
+  }
+  .submit-btn:hover{background:var(--gold-bright);}
+  .form-note{font-size:0.8rem; color:var(--ink-dim); margin-top:14px;}
+  .form-success{
+    display:none; background:rgba(14,143,111,0.1); border:1px solid var(--emerald); color:var(--ink);
+    padding:16px; border-radius:5px; font-size:0.9rem; margin-top:16px;
+  }
+  .form-success.show{display:block;}
+
+  footer{background:var(--navy-deep); color:var(--ink-dim); padding:50px 0 30px; border-top:1px solid var(--panel-line);}
+  .footer-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px;}
+  .footer-grid .logo{color:var(--ink);}
+  .footer-links{display:flex; gap:28px; flex-wrap:wrap; font-size:0.9rem;}
+  .footer-bottom{
+    margin-top:40px; padding-top:20px; border-top:1px solid var(--panel-line);
+    font-size:0.8rem; opacity:0.7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  @media (max-width: 900px){
+    .navlinks{display:none;}
+    .burger{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .card-stack{display:none;}
+    .stream-grid{grid-template-columns:1fr;}
+    .resource-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+  @media (max-width: 540px){
+    .resource-grid{grid-template-columns:1fr;}
+    .quiz-shell{padding:24px;}
+    .quiz-paper{padding:24px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+
+  /* --- light-on-blue overrides for dark band sections --- */
+  footer, footer .logo, footer a{color:#EAF1FC;}
+  footer .footer-grid .logo{color:#FFFFFF;}
+  footer .footer-bottom{color:#BBD0EF; opacity:1;}
+  .quiz-shell .section-head h2, .quiz-shell .section-head p, .quiz-shell .eyebrow{color:#FFFFFF;}
+  .quiz-shell .eyebrow{color:#BFD6FF;}
+  .quiz-shell .eyebrow::before{background:#BFD6FF;}
+
+.theme-toggle{
+  width:38px; height:38px;
+  border-radius:50%;
+  border:1px solid var(--panel-line);
+  background:var(--bg-soft);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  font-size:1rem;
+  transition:background .2s ease, border-color .2s ease;
+}
+.theme-toggle:hover{border-color:var(--gold);}
+.theme-toggle .icon-moon{display:none;}
+[data-theme="dark"] .theme-toggle .icon-sun{display:none;}
+[data-theme="dark"] .theme-toggle .icon-moon{display:inline;}
+
+/* ===== DARK MODE OVERRIDES ===== */
+[data-theme="dark"]{
+  --bg:#0B0F14;
+  --bg-soft:#10151C;
+  --panel:#141B24;
+  --panel-line:#2A333E;
+  --ink:#ECE7DA;
+  --ink-dim:#A9AFB8;
+}
+[data-theme="dark"] header{
+  background:rgba(11,15,20,0.92);
+}
+[data-theme="dark"] .ruled{
+  background-image: linear-gradient(rgba(11,15,20,0.97), rgba(11,15,20,0.97)), repeating-linear-gradient(to bottom, transparent 0px, transparent 37px, var(--panel-line) 38px);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav wrap">
+    <a class="logo" href="#top">Disha<span class="dot">.</span></a>
+
+    <div class="nav-right">
+      <div class="navlinks">
+        <a href="#streams">10th Pass</a>
+        <a href="#after12">12th Pass</a>
+        <a href="#streams">All Streams</a>
+        <a href="#resources">Resources</a>
+      </div>
+      <a href="#quiz" class="nav-cta">Take the Quiz</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+    </div>
+
+
+    <button class="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">For Class 10 &amp; 12 students</div>
+      <h1>Your marksheet ends <br><em>here.</em> Your future doesn't.</h1>
+      <p class="lead">Disha helps you compare every major stream available in India — Science, Commerce, Arts, vocational, diploma, and defence — then helps you talk to someone before you decide anything big.</p>
+      <div class="hero-actions">
+        <a href="#quiz" class="btn btn-solid">Take the 3-minute quiz</a>
+        <a href="#streams" class="btn btn-outline">Compare streams</a>
+      </div>
+    </div>
+    <div class="card-stack">
+      <div class="markcard back">
+        <div class="tag">Pathway Card</div>
+        <h3>Commerce → CA</h3>
+        <div class="row"><span>Avg. duration</span><span>5 yrs</span></div>
+        <div class="row"><span>Entrance</span><span>CA Foundation</span></div>
+      </div>
+      <div class="markcard front">
+        <div class="tag">Pathway Card</div>
+        <h3>Science → Engineering</h3>
+        <div class="row"><span>Avg. duration</span><span>4 yrs</span></div>
+        <div class="row"><span>Entrance</span><span>JEE / CET</span></div>
+        <div class="row"><span>Avg. starting pay</span><span class="mono">₹4–8L/yr</span></div>
+        <span class="stamp">VERIFIED PATH</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUICK STREAM LINKS ============ -->
+<section class="section" id="stream-links" style="padding:50px 0;">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:26px;">
+      <div class="eyebrow">Jump to a stream</div>
+      <h2 style="font-size:1.6rem;">Streams</h2>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:14px;">
+      <a href="science.html" class="btn btn-outline">Science</a>
+      <a href="commerce.html" class="btn btn-outline">Commerce</a>
+      <a href="arts.html" class="btn btn-outline">Arts / Humanities</a>
+      <a href="vocational.html" class="btn btn-outline">Vocational / ITI</a>
+      <a href="diploma.html" class="btn btn-outline">Polytechnic Diploma</a>
+      <a href="defence.html" class="btn btn-outline">Defence Prep</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STREAMS AFTER 10th ============ -->
+<section class="section ruled" id="streams">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">After Class 10</div>
+      <h2>Six paths. One choice that feels permanent. (It isn't.)</h2>
+      <p>India offers more than the usual Science/Commerce/Arts split. Here's the full picture, including vocational and diploma routes most students never hear about.</p>
+    </div>
+
+    <div class="stream-grid">
+      <div class="stream-card science">
+        <div class="num">01 / Science</div>
+        <h3>Science (PCM / PCB)</h3>
+        <div class="subjects mono">Physics · Chemistry · Maths or Biology</div>
+        <ul>
+          <li>Engineering, medicine, architecture, research</li>
+          <li>Keeps commerce &amp; most arts options open later</li>
+          <li>Good fit if: you like solving problems, not just memorising</li>
+        </ul>
+        <a class="readmore" href="streams/science.html">Read the full guide →</a>
+      </div>
+      <div class="stream-card commerce">
+        <div class="num">02 / Commerce</div>
+        <h3>Commerce</h3>
+        <div class="subjects mono">Accountancy · Economics · Business Studies</div>
+        <ul>
+          <li>CA, CS, banking, business, economics, management</li>
+          <li>Strong base for entrepreneurship later</li>
+          <li>Good fit if: numbers and "how businesses work" interest you</li>
+        </ul>
+        <a class="readmore" href="streams/commerce.html">Read the full guide →</a>
+      </div>
+      <div class="stream-card arts">
+        <div class="num">03 / Arts / Humanities</div>
+        <h3>Arts / Humanities</h3>
+        <div class="subjects mono">History · Political Science · Psychology · Languages</div>
+        <ul>
+          <li>Law, civil services, design, journalism, psychology</li>
+          <li>Widest range of electives to mix and match</li>
+          <li>Good fit if: you're drawn to people, society, or ideas</li>
+        </ul>
+        <a class="readmore" href="streams/arts.html">Read the full guide →</a>
+      </div>
+      <div class="stream-card vocational">
+        <div class="num">04 / Vocational / ITI</div>
+        <h3>Vocational &amp; ITI</h3>
+        <div class="subjects mono">Electrician · Fitter · IT · Hospitality trades</div>
+        <ul>
+          <li>Industrial Training Institutes — 1–2 year trade certificates</li>
+          <li>Fastest route to a paying technical job</li>
+          <li>Good fit if: you want hands-on skills and quicker employment</li>
+        </ul>
+        <a class="readmore" href="streams/vocational.html">Read the full guide →</a>
+      </div>
+      <div class="stream-card diploma">
+        <div class="num">05 / Diploma</div>
+        <h3>Polytechnic Diploma</h3>
+        <div class="subjects mono">Mechanical · Civil · Electronics · Computer</div>
+        <ul>
+          <li>3-year diploma straight after 10th, skips 11th–12th</li>
+          <li>Can later join engineering via lateral entry</li>
+          <li>Good fit if: you already know you want a technical career</li>
+        </ul>
+        <a class="readmore" href="streams/diploma.html">Read the full guide →</a>
+      </div>
+      <div class="stream-card defence">
+        <div class="num">06 / Defence Prep</div>
+        <h3>Defence-Track Schools</h3>
+        <div class="subjects mono">Sainik School · Military School · NCC</div>
+        <ul>
+          <li>Builds toward NDA, CDS, or armed forces entry after 12th</li>
+          <li>Physical training alongside regular academics</li>
+          <li>Good fit if: you're drawn to discipline and service</li>
+        </ul>
+        <a class="readmore" href="streams/defence.html">Read the full guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFTER 12th TIMETABLE ============ -->
+<section class="section" id="after12">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">After Class 12</div>
+      <h2>What each stream actually leads to</h2>
+      <p>Read it like a timetable: your stream is the row, the period is how far it can take you.</p>
+    </div>
+    <div class="table-scroll">
+      <table class="timetable">
+        <thead>
+          <tr>
+            <th>Stream</th>
+            <th>Common courses</th>
+            <th>Entrance exams</th>
+            <th>Typical duration</th>
+            <th>Where it leads</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="period">Science (PCM)</td>
+            <td>B.Tech, B.Arch, B.Sc, Integrated M.Sc</td>
+            <td>JEE Main/Advanced, CET, NATA</td>
+            <td>4 yrs</td>
+            <td>Engineering, architecture, data science, research</td>
+          </tr>
+          <tr>
+            <td class="period">Science (PCB)</td>
+            <td>MBBS, BDS, B.Sc Nursing, B.Pharm</td>
+            <td>NEET</td>
+            <td>4–5.5 yrs</td>
+            <td>Medicine, dentistry, allied health, pharma</td>
+          </tr>
+          <tr>
+            <td class="period">Commerce</td>
+            <td>B.Com, BBA, CA, CS, CMA</td>
+            <td>CA Foundation, CUET, college-specific</td>
+            <td>3–5 yrs</td>
+            <td>Finance, accounting, banking, business</td>
+          </tr>
+          <tr>
+            <td class="period">Arts / Humanities</td>
+            <td>BA (Hons), Law (5-yr), Journalism, Psychology</td>
+            <td>CUET, CLAT, design/journalism entrances</td>
+            <td>3–5 yrs</td>
+            <td>Law, civil services, media, social sciences, design</td>
+          </tr>
+          <tr>
+            <td class="period">Vocational / ITI</td>
+            <td>Advanced trade certificates, apprenticeships</td>
+            <td>Usually no entrance — merit-based</td>
+            <td>1–2 yrs</td>
+            <td>Skilled technical jobs, self-employment, PSU apprenticeships</td>
+          </tr>
+          <tr>
+            <td class="period">Polytechnic Diploma</td>
+            <td>Diploma engineering, lateral B.Tech entry</td>
+            <td>State CET/polytechnic entrance</td>
+            <td>3 yrs (+2 lateral)</td>
+            <td>Junior engineer roles, technical supervisor, further B.Tech</td>
+          </tr>
+          <tr>
+            <td class="period">Defence</td>
+            <td>NDA, Indian Military Academy, naval/air wings</td>
+            <td>NDA (UPSC), CDS</td>
+            <td>3–4 yrs training</td>
+            <td>Army, Navy, Air Force officer roles</td>
+          </tr>
+          <tr>
+            <td class="period">Performing &amp; Fine Arts</td>
+            <td>BFA, BPA, design &amp; film institutes</td>
+            <td>NIFT, NID, FTII, institute-specific</td>
+            <td>3–4 yrs</td>
+            <td>Design, film, animation, performing arts, fashion</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section class="section ruled" id="quiz">
+  <div class="wrap">
+    <div class="quiz-shell">
+      <div class="section-head">
+        <div class="eyebrow">Stream finder</div>
+        <h2>Not sure where you fit? Answer 5 questions.</h2>
+        <p>This isn't a verdict — it's a starting point for the conversation with your parents, teachers, or a counsellor.</p>
+      </div>
+
+      <div class="quiz-paper">
+        <div id="quizActive">
+          <div class="quiz-progress" id="quizProgress"></div>
+          <div class="q-number" id="qNum">QUESTION 1 OF 5</div>
+          <div id="quizQuestion"></div>
+          <div class="options" id="quizOptions"></div>
+          <div class="quiz-footer">
+            <button id="backBtn" disabled>← Back</button>
+            <span class="mono" style="font-size:0.8rem;" id="quizHint">Pick the option that fits best</span>
+          </div>
+        </div>
+
+        <div class="result-sheet" id="resultSheet">
+          <span class="result-stamp" id="resultStampTop">RESULT</span>
+          <div class="result-title" id="resultTitle">Your leaning: Science</div>
+          <div class="result-bars" id="resultBars"></div>
+          <p class="result-blurb" id="resultBlurb"></p>
+          <button class="btn btn-outline retake" onclick="restartQuiz()">Retake quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESOURCES ============ -->
+<section class="section" id="resources">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Resources</div>
+      <h2>Things worth bookmarking</h2>
+      <p>Quick references for decisions that come up again and again.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="mono">Checklist</div>
+        <h4>Choosing subjects in 11th</h4>
+        <p>What to check before locking your combination — beyond just marks.</p>
+      </div>
+      <div class="resource-card">
+        <div class="mono">Calendar</div>
+        <h4>Entrance exam timeline</h4>
+        <p>JEE, NEET, CUET, CLAT, NDA — when applications usually open and close.</p>
+      </div>
+      <div class="resource-card">
+        <div class="mono">Guide</div>
+        <h4>Diploma vs degree</h4>
+        <p>When a polytechnic diploma after 10th makes more sense than 11th–12th.</p>
+      </div>
+      <div class="resource-card">
+        <div class="mono">Guide</div>
+        <h4>Talking to parents</h4>
+        <p>How to open the "I want to switch streams" conversation at home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#top">Disha<span class="dot">.</span></a>
+        <p style="margin-top:10px; font-size:0.85rem; opacity:0.75; max-width:280px;">Career direction for students figuring out what comes after the board exams.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#streams">10th Pass</a>
+        <a href="#after12">12th Pass</a>
+        <a href="#quiz">Stream Quiz</a>
+        <a href="#resources">Resources</a>
+        <a href="#stream-links">All Streams</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Disha. All rights reserved.</span>
+      <span>Made for students, not for marks.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const questions = [
+    {
+      q: "Which of these sounds most like a good Saturday afternoon?",
+      options: [
+        { text: "Fixing something or figuring out how a gadget works", tag: "science" },
+        { text: "Tracking expenses, planning a budget, or following stock news", tag: "commerce" },
+        { text: "Reading, writing, or debating an idea with friends", tag: "arts" },
+        { text: "Building or repairing something with your hands", tag: "vocational" }
+      ]
+    },
+    {
+      q: "In school, which subject do you actually look forward to?",
+      options: [
+        { text: "Maths or Science practicals", tag: "science" },
+        { text: "Economics or Business Studies", tag: "commerce" },
+        { text: "History, Civics, or Languages", tag: "arts" },
+        { text: "Workshop, computer lab, or technical drawing", tag: "vocational" }
+      ]
+    },
+    {
+      q: "When you imagine your future job, what matters most?",
+      options: [
+        { text: "Solving technical or scientific problems", tag: "science" },
+        { text: "Building or running a business", tag: "commerce" },
+        { text: "Making an impact on people or society", tag: "arts" },
+        { text: "Starting to earn sooner with a practical skill", tag: "vocational" }
+      ]
+    },
+    {
+      q: "How do you feel about long-term, exam-heavy study (4–5+ years)?",
+      options: [
+        { text: "Fine with it, if it leads somewhere technical or medical", tag: "science" },
+        { text: "Prefer something shorter with practical skills early on", tag: "vocational" },
+        { text: "Okay with it if the subject genuinely interests me", tag: "arts" },
+        { text: "Fine with it for the right business or finance career", tag: "commerce" }
+      ]
+    },
+    {
+      q: "Pick the career that appeals to you most right now:",
+      options: [
+        { text: "Engineer, doctor, or researcher", tag: "science" },
+        { text: "Chartered accountant, banker, or entrepreneur", tag: "commerce" },
+        { text: "Lawyer, civil servant, designer, or journalist", tag: "arts" },
+        { text: "Skilled technician, electrician, or trade specialist", tag: "vocational" }
+      ]
+    }
+  ];
+
+  let current = 0;
+  const answers = [];
+
+  const qNum = document.getElementById('qNum');
+  const quizQuestion = document.getElementById('quizQuestion');
+  const quizOptions = document.getElementById('quizOptions');
+  const quizProgress = document.getElementById('quizProgress');
+  const backBtn = document.getElementById('backBtn');
+
+  function renderProgress(){
+    quizProgress.innerHTML = '';
+    questions.forEach((_, i) => {
+      const bit = document.createElement('div');
+      bit.className = 'bit' + (i < current || (i === current && answers[i] !== undefined) ? ' done' : '');
+      quizProgress.appendChild(bit);
+    });
+  }
+
+  function renderQuestion(){
+    const item = questions[current];
+    qNum.textContent = `QUESTION ${current + 1} OF ${questions.length}`;
+    quizQuestion.textContent = item.q;
+    quizOptions.innerHTML = '';
+    item.options.forEach((opt) => {
+      const b = document.createElement('button');
+      b.className = 'option-btn';
+      b.type = 'button';
+      b.textContent = opt.text;
+      b.addEventListener('click', () => selectOption(opt.tag));
+      quizOptions.appendChild(b);
+    });
+    backBtn.disabled = current === 0;
+    renderProgress();
+  }
+
+  function selectOption(tag){
+    answers[current] = tag;
+    if (current < questions.length - 1){
+      current++;
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  }
+
+  backBtn.addEventListener('click', () => {
+    if (current > 0){
+      current--;
+      renderQuestion();
+    }
+  });
+
+  function showResult(){
+    const counts = { science: 0, commerce: 0, arts: 0, vocational: 0 };
+    answers.forEach(a => counts[a]++);
+    const total = answers.length;
+    const sorted = Object.entries(counts).sort((a,b) => b[1] - a[1]);
+    const top = sorted[0][0];
+
+    const labels = { science: 'Science', commerce: 'Commerce', arts: 'Arts / Humanities', vocational: 'Vocational / ITI' };
+    const blurbs = {
+      science: "Your answers lean toward problem-solving and technical curiosity — Science (PCM or PCB) is worth a closer look, especially if you enjoy maths or biology in class.",
+      commerce: "Your answers lean toward business and structured, practical thinking — Commerce could be a strong fit, particularly if numbers and real-world systems interest you.",
+      arts: "Your answers lean toward ideas, people, and society — Arts/Humanities offers the widest range of paths, from law to design to civil services.",
+      vocational: "Your answers lean toward hands-on, practical skills — a Vocational or ITI track could get you earning sooner with a respected technical skillset."
+    };
+
+    document.getElementById('resultTitle').textContent = `Your leaning: ${labels[top]}`;
+    document.getElementById('resultBlurb').textContent = blurbs[top];
+
+    const barsEl = document.getElementById('resultBars');
+    barsEl.innerHTML = '';
+    sorted.filter(([,count]) => count > 0).forEach(([tag, count]) => {
+      const pct = Math.round((count/total)*100);
+      const row = document.createElement('div');
+      row.className = 'result-bar-row';
+      row.innerHTML = `
+        <span>${labels[tag]}</span>
+        <span class="result-bar-track"><span class="result-bar-fill" style="width:${pct}%"></span></span>
+        <span class="mono">${pct}%</span>`;
+      barsEl.appendChild(row);
+    });
+
+    document.getElementById('quizActive').style.display = 'none';
+    document.getElementById('resultSheet').classList.add('show');
+  }
+
+  function restartQuiz(){
+    current = 0;
+    answers.length = 0;
+    document.getElementById('resultSheet').classList.remove('show');
+    document.getElementById('quizActive').style.display = 'block';
+    renderQuestion();
+  }
+  renderQuestion();
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  // Load saved preference on page load
+  const savedTheme = localStorage.getItem('disha-theme');
+  if (savedTheme === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      root.removeAttribute('data-theme');
+      localStorage.setItem('disha-theme', 'light');
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('disha-theme', 'dark');
+    }
+  });
+</script>
+
+
+</body>
+</html>
